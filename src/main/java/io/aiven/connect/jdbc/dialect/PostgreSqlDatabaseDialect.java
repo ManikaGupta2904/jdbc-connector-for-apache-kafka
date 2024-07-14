@@ -17,37 +17,21 @@
 
 package io.aiven.connect.jdbc.dialect;
 
-import java.lang.reflect.Array;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Types;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
-import java.util.stream.Collectors;
-
-import org.apache.kafka.connect.data.Date;
-import org.apache.kafka.connect.data.Decimal;
-import org.apache.kafka.connect.data.Schema;
-import org.apache.kafka.connect.data.SchemaBuilder;
-import org.apache.kafka.connect.data.Time;
-import org.apache.kafka.connect.data.Timestamp;
-import org.apache.kafka.connect.errors.DataException;
-
 import io.aiven.connect.jdbc.config.JdbcConfig;
 import io.aiven.connect.jdbc.dialect.DatabaseDialectProvider.SubprotocolBasedProvider;
 import io.aiven.connect.jdbc.sink.metadata.SinkRecordField;
 import io.aiven.connect.jdbc.source.ColumnMapping;
-import io.aiven.connect.jdbc.util.ColumnDefinition;
-import io.aiven.connect.jdbc.util.ColumnId;
-import io.aiven.connect.jdbc.util.ExpressionBuilder;
-import io.aiven.connect.jdbc.util.IdentifierRules;
-import io.aiven.connect.jdbc.util.TableDefinition;
-import io.aiven.connect.jdbc.util.TableId;
+import io.aiven.connect.jdbc.util.*;
+import org.apache.kafka.connect.data.Date;
+import org.apache.kafka.connect.data.Time;
+import org.apache.kafka.connect.data.Timestamp;
+import org.apache.kafka.connect.data.*;
+import org.apache.kafka.connect.errors.DataException;
+
+import java.lang.reflect.Array;
+import java.sql.*;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * A {@link DatabaseDialect} for PostgreSQL.
@@ -277,31 +261,64 @@ public class PostgreSqlDatabaseDialect extends GenericDatabaseDialect {
         }
     }
 
+//    private boolean bindPrimitiveArray(
+//            final PreparedStatement statement,
+//            final int index,
+//            final Schema schema,
+//            final Object value
+//    ) throws SQLException {
+//        final Schema.Type valueType = schema.valueSchema().type();
+//        final Class<?> componentType = SUPPORTED_ARRAY_VALUE_TYPES_TO_JAVA.get(valueType);
+//        if (componentType != null) {
+//            List<?> valueCollection = (List<?>) value;
+//            // Postgres does not have an 8-bit integer, using short as the best alternative.
+//            if (valueType == Schema.Type.INT8) {
+//                valueCollection = valueCollection.stream()
+//                        .map(o -> ((Byte) o).shortValue()).collect(Collectors.toList());
+//            }
+//            final Object newValue = Array.newInstance(componentType, valueCollection.size());
+//            for (int i = 0; i < valueCollection.size(); i++) {
+//                Array.set(newValue, i, valueCollection.get(i));
+//            }
+//            statement.setObject(index, newValue, Types.ARRAY);
+//            return true;
+//        } else {
+//            throw new DataException(String.format("Unsupported schema type %s for ARRAY values", valueType));
+//        }
+//    }
+
     private boolean bindPrimitiveArray(
-            final PreparedStatement statement,
-            final int index,
+            final PreparedStatement stmt,
+            final int idx,
             final Schema schema,
             final Object value
     ) throws SQLException {
         final Schema.Type valueType = schema.valueSchema().type();
         final Class<?> componentType = SUPPORTED_ARRAY_VALUE_TYPES_TO_JAVA.get(valueType);
+
         if (componentType != null) {
-            List<?> valueCollection = (List<?>) value;
-            // Postgres does not have an 8-bit integer, using short as the best alternative.
+            List<?> valueList = (List<?>) value;
+
+            // Handle INT8 as short for Postgres compatibility
             if (valueType == Schema.Type.INT8) {
-                valueCollection = valueCollection.stream()
-                        .map(o -> ((Byte) o).shortValue()).collect(Collectors.toList());
+                valueList = valueList.stream()
+                        .map(o -> ((Byte) o).shortValue())
+                        .collect(Collectors.toList());
             }
-            final Object newValue = Array.newInstance(componentType, valueCollection.size());
-            for (int i = 0; i < valueCollection.size(); i++) {
-                Array.set(newValue, i, valueCollection.get(i));
+
+            final Object newArray = Array.newInstance(componentType, valueList.size());
+
+            for (int i = 0; i < valueList.size(); i++) {
+                Array.set(newArray, i, valueList.get(i));
             }
-            statement.setObject(index, newValue, Types.ARRAY);
+
+            stmt.setObject(idx, newArray, Types.ARRAY);
             return true;
         } else {
             throw new DataException(String.format("Unsupported schema type %s for ARRAY values", valueType));
         }
     }
+
 
     @Override
     public String buildInsertStatement(final TableId table,
