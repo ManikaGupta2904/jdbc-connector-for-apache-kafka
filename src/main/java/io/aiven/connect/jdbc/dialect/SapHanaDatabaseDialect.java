@@ -17,15 +17,6 @@
 
 package io.aiven.connect.jdbc.dialect;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
-import org.apache.kafka.connect.data.Date;
-import org.apache.kafka.connect.data.Decimal;
-import org.apache.kafka.connect.data.Time;
-import org.apache.kafka.connect.data.Timestamp;
-
 import io.aiven.connect.jdbc.config.JdbcConfig;
 import io.aiven.connect.jdbc.dialect.DatabaseDialectProvider.SubprotocolBasedProvider;
 import io.aiven.connect.jdbc.sink.metadata.SinkRecordField;
@@ -33,6 +24,14 @@ import io.aiven.connect.jdbc.util.ColumnId;
 import io.aiven.connect.jdbc.util.ExpressionBuilder;
 import io.aiven.connect.jdbc.util.IdentifierRules;
 import io.aiven.connect.jdbc.util.TableId;
+import org.apache.kafka.connect.data.Date;
+import org.apache.kafka.connect.data.Decimal;
+import org.apache.kafka.connect.data.Time;
+import org.apache.kafka.connect.data.Timestamp;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * A {@link DatabaseDialect} for SAP.
@@ -70,44 +69,66 @@ public class SapHanaDatabaseDialect extends GenericDatabaseDialect {
 
     @Override
     protected String getSqlType(final SinkRecordField field) {
+        String sqlType = null;
+
+        // Check for logical types based on schemaName
         if (field.schemaName() != null) {
             switch (field.schemaName()) {
                 case Decimal.LOGICAL_NAME:
-                    return "DECIMAL";
+                    sqlType = "DECIMAL";
+                    break;
                 case Date.LOGICAL_NAME:
-                    return "DATE";
                 case Time.LOGICAL_NAME:
-                    return "DATE";
+                    sqlType = "DATE";
+                    break;
                 case Timestamp.LOGICAL_NAME:
-                    return "TIMESTAMP";
+                    sqlType = "TIMESTAMP";
+                    break;
                 default:
                     // fall through to normal types
                     break;
             }
         }
-        switch (field.schemaType()) {
-            case INT8:
-                return "TINYINT";
-            case INT16:
-                return "SMALLINT";
-            case INT32:
-                return "INTEGER";
-            case INT64:
-                return "BIGINT";
-            case FLOAT32:
-                return "REAL";
-            case FLOAT64:
-                return "DOUBLE";
-            case BOOLEAN:
-                return "BOOLEAN";
-            case STRING:
-                return "VARCHAR(1000)";
-            case BYTES:
-                return "BLOB";
-            default:
-                return super.getSqlType(field);
+
+        // Check for primitive types based on schemaType
+        if (sqlType == null) {
+            switch (field.schemaType()) {
+                case INT8:
+                    sqlType = "TINYINT";
+                    break;
+                case INT16:
+                    sqlType = "SMALLINT";
+                    break;
+                case INT32:
+                    sqlType = "INTEGER";
+                    break;
+                case INT64:
+                    sqlType = "BIGINT";
+                    break;
+                case FLOAT32:
+                    sqlType = "REAL";
+                    break;
+                case FLOAT64:
+                    sqlType = "DOUBLE";
+                    break;
+                case BOOLEAN:
+                    sqlType = "BOOLEAN";
+                    break;
+                case STRING:
+                    sqlType = "VARCHAR(1000)";
+                    break;
+                case BYTES:
+                    sqlType = "BLOB";
+                    break;
+                default:
+                    sqlType = super.getSqlType(field); // fallback to super method
+                    break;
+            }
         }
+
+        return sqlType;
     }
+
 
     @Override
     public String buildCreateTableStatement(

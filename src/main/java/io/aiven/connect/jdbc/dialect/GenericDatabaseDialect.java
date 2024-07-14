@@ -81,6 +81,8 @@ import io.aiven.connect.jdbc.util.IdentifierRules;
 import io.aiven.connect.jdbc.util.JdbcDriverInfo;
 import io.aiven.connect.jdbc.util.TableDefinition;
 import io.aiven.connect.jdbc.util.TableId;
+import io.aiven.connect.jdbc.util.ColumnType; // Replace 'path.to' with the actual package of ColumnType
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -840,12 +842,36 @@ public class GenericDatabaseDialect implements DatabaseDialect {
 
     @Override
     public String addFieldToSchema(
-        final ColumnDefinition columnDefn,
-        final SchemaBuilder builder
+            final ColumnDefinition columnDefn,
+            final SchemaBuilder builder
     ) {
-        return addFieldToSchema(columnDefn, builder, fieldNameFor(columnDefn), columnDefn.type(),
-            columnDefn.isOptional()
-        );
+        return addFieldToSchema(columnDefn, builder, fieldNameFor(columnDefn), columnDefn.type(), columnDefn.isOptional());
+    }
+
+    private String addFieldToSchema(
+            final ColumnDefinition columnDefn,
+            final SchemaBuilder builder,
+            final String fieldName,
+            final ColumnType columnType,
+            final boolean isOptional
+    ) {
+        return addFieldToSchema(builder, fieldName, columnType, isOptional);
+    }
+
+    private String fieldNameFor(ColumnDefinition columnDefn) {
+        return columnDefn.getName();
+    }
+
+    private String addFieldToSchema(
+            final SchemaBuilder builder,
+            final String fieldName,
+            final ColumnType columnType,
+            final boolean isOptional
+    ) {
+        return builder.field(fieldName, columnType.getSchema())
+                .optional()
+                .build()
+                .toString();
     }
 
     /**
