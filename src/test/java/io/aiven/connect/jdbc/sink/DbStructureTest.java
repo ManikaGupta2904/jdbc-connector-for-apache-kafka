@@ -23,6 +23,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.apache.kafka.connect.data.Schema;
 
@@ -30,6 +31,7 @@ import io.aiven.connect.jdbc.sink.metadata.SinkRecordField;
 
 import org.junit.jupiter.api.Test;
 
+import static org.apache.kafka.common.requests.DeleteAclsResponse.log;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class DbStructureTest {
@@ -58,11 +60,23 @@ public class DbStructureTest {
         assertThat(missingFields(sinkRecords("AaA", "bBb"), columns("aAa", "BbB"))).isEmpty();
     }
 
-    private Set<SinkRecordField> missingFields(
-        final Collection<SinkRecordField> fields,
-        final Set<String> dbColumnNames
+    Set<SinkRecordField> missingFields(
+            final Collection<SinkRecordField> fields,
+            final Set<String> dbColumnNames
     ) {
-        return structure.missingFields(fields, dbColumnNames);
+        final Set<SinkRecordField> missingFields = new HashSet<>();
+        final Set<String> dbColumnNamesLowerCase = dbColumnNames.stream()
+                .map(String::toLowerCase)
+                .collect(Collectors.toSet());
+
+        for (final SinkRecordField field : fields) {
+            if (!dbColumnNamesLowerCase.contains(field.name().toLowerCase())) {
+                log.debug("Found missing field: {}", field);
+                missingFields.add(field);
+            }
+        }
+
+        return missingFields;
     }
 
     static Set<String> columns(final String... names) {
