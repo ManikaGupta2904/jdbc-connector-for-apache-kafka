@@ -1,0 +1,12 @@
+Project Name,Package Name,Type Name,NOF,NOPF,NOM,NOPM,LOC,WMC,NC,DIT,LCOM,FANIN,FANOUT,File path,Line no
+sink,io.aiven.connect.jdbc.sink,JdbcDbWriterTest,3,0,15,13,156,18,0,0,0.26666666666666666,0,1,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/JdbcDbWriterTest.java,52
+sink,io.aiven.connect.jdbc.sink,SqliteHelper,2,2,8,8,60,9,0,0,0.0,4,0,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/SqliteHelper.java,30
+sink,io.aiven.connect.jdbc.sink,SqliteHelper.ResultSetReadCallback,0,0,0,0,3,0,0,0,-1.0,0,0,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/SqliteHelper.java,40
+sink,io.aiven.connect.jdbc.sink,BufferedRecordsTest,2,0,13,9,199,14,0,0,0.0,0,1,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/BufferedRecordsTest.java,55
+sink,io.aiven.connect.jdbc.sink,DbStructureTest,1,0,8,4,41,11,0,0,0.375,0,0,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/DbStructureTest.java,37
+sink,io.aiven.connect.jdbc.sink,SqliteHelperTest,1,0,3,3,68,4,0,0,0.0,0,1,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/SqliteHelperTest.java,39
+sink,io.aiven.connect.jdbc.sink,JdbcSinkConnectorTest,1,0,5,5,41,5,0,0,0.0,0,0,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/JdbcSinkConnectorTest.java,34
+sink,io.aiven.connect.jdbc.sink,JdbcSinkTaskTest,2,0,6,5,97,6,0,0,0.5,0,1,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/JdbcSinkTaskTest.java,54
+sink,io.aiven.connect.jdbc.sink,PreparedStatementBinderTest,1,0,4,4,67,4,0,0,0.0,0,0,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/PreparedStatementBinderTest.java,55
+sink,io.aiven.connect.jdbc.sink,JdbcSinkConfigTest,0,0,10,10,80,10,0,0,-1.0,0,0,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/JdbcSinkConfigTest.java,36
+sink,io.aiven.connect.jdbc.sink.metadata,FieldsMetadataTest,3,0,18,16,103,18,0,0,0.1111111111111111,0,0,/Users/krish/jdbc-connector-for-apache-kafka-master/src/test/java/io/aiven/connect/jdbc/sink/metadata/FieldsMetadataTest.java,36

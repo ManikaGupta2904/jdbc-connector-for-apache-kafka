@@ -1,0 +1,7 @@
+Project Name,Package Name,Type Name,Testability Smell,Cause of the Smell
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby.CaseSensitive,Global State,The tool detected the smell in this class because the class can be accessed as a `global` state.
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby.TableName,Global State,The tool detected the smell in this class because the class can be accessed as a `global` state.
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby.ColumnName,Global State,The tool detected the smell in this class because the class can be accessed as a `global` state.
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby.Condition,Global State,The tool detected the smell in this class because the class can be accessed as a `global` state.
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby.EqualsCondition,Global State,The tool detected the smell in this class because the class can be accessed as a `global` state.
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby.Literal,Global State,The tool detected the smell in this class because the class can be accessed as a `global` state.

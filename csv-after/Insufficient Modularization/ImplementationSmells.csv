@@ -1,0 +1,209 @@
+Project Name,Package Name,Type Name,Method Name,Implementation Smell,Cause of the Smell,Method start line no
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceConnectorConfigTest,testCachingRecommender,Magic Number,The method contains a magic number: 1000L,113
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceConnectorConfigTest,testCachingRecommender,Magic Number,The method contains a magic number: 100L,113
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceConnectorConfigTest,testCachingRecommender,Magic Number,The method contains a magic number: 2000L,113
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceConnectorConfigTest,testDefaultConstructedCachedTableValuesReturnsNull,Magic Number,The method contains a magic number: 20L,136
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceConnectorConfigTest,testCachedTableValuesReturnsCachedResultWithinExpiryTime,Magic Number,The method contains a magic number: 20L,143
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceConnectorConfigTest,testCachedTableValuesReturnsNullResultAtOrAfterExpiryTime,Magic Number,The method contains a magic number: 20L,153
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceConnectorConfigTest,testCachedTableValuesReturnsNullResultIfConfigurationChanges,Magic Number,The method contains a magic number: 20L,164
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceConnectorConfigTest,assertWhitelistRecommendations,Long Statement,The length of the statement "assertThat(namedValue(results`JdbcSourceConnectorConfig.TABLE_WHITELIST_CONFIG).recommendedValues()).containsExactlyInAnyOrderElementsOf(recommendedValues);" is 156.,185
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceConnectorConfigTest,assertBlacklistRecommendations,Long Statement,The length of the statement "assertThat(namedValue(results`JdbcSourceConnectorConfig.TABLE_BLACKLIST_CONFIG).recommendedValues()).containsExactlyInAnyOrderElementsOf(recommendedValues);" is 156.,190
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskConversionTest,testTypeConversion,Long Parameter List,The method has 5 parameters. ,66
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskConversionTest,pollRecords,Magic Number,The method contains a magic number: 10,85
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskConfigTest,testValidateTablesAndQueryMandatoryConfigPresent,Long Statement,The length of the statement "assertThrowsExactly(ConnectException.class`config::validate`"Invalid configuration: each JdbcSourceTask must" + " have at least one table assigned to it or one query specified");" is 178.,42
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskConfigTest,testValidateQueryAndTablesGiven,Long Statement,The length of the statement "assertThrowsExactly(ConnectException.class`config::validate`"Invalid configuration: each JdbcSourceTask must" + " have at least one table assigned to it or one query specified");" is 178.,55
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractIntOffset,Magic Number,The method contains a magic number: 42,83
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractIntOffset,Magic Number,The method contains a magic number: 42L,83
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractLongOffset,Magic Number,The method contains a magic number: 42L,90
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractLongOffset,Magic Number,The method contains a magic number: 42L,90
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractDecimalOffset,Magic Number,The method contains a magic number: 42,97
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractDecimalOffset,Magic Number,The method contains a magic number: 42L,97
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractTooLargeDecimalOffset,Magic Number,The method contains a magic number: 42L,105
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractFractionalDecimalOffset,Magic Number,The method contains a magic number: 2,116
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractFractionalDecimalOffset,Magic Number,The method contains a magic number: 42L,116
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractWithIncColumn,Long Statement,The length of the statement "schema=SchemaBuilder.struct().field("id"`SchemaBuilder.INT32_SCHEMA).field(TS1_COLUMN.name()`Timestamp.SCHEMA).field(TS2_COLUMN.name()`Timestamp.SCHEMA).build();" is 161.,125
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractWithIncColumn,Magic Number,The method contains a magic number: 42,125
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingCriteriaTest,extractWithIncColumn,Magic Number,The method contains a magic number: 42L,125
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskLifecycleTest,testPollInterval,Magic Number,The method contains a magic number: 2,65
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskLifecycleTest,testSingleUpdateMultiplePoll,Magic Number,The method contains a magic number: 2,90
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskLifecycleTest,testMultipleTables,Magic Number,The method contains a magic number: 2,117
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskLifecycleTest,testMultipleTablesMultiplePolls,Magic Number,The method contains a magic number: 2,147
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskLifecycleTest,testMultipleTablesMultiplePolls,Magic Number,The method contains a magic number: 3,147
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskLifecycleTest,testMultipleTablesMultiplePolls,Magic Number,The method contains a magic number: 4,147
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskLifecycleTest,testMultipleTablesMultiplePolls,Magic Number,The method contains a magic number: 2,147
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskLifecycleTest,testMultipleTablesMultiplePolls,Magic Number,The method contains a magic number: 2,147
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskLifecycleTest,testMultipleTablesMultiplePolls,Magic Number,The method contains a magic number: 2,147
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskLifecycleTest,testMultipleTablesMultiplePolls,Magic Number,The method contains a magic number: 2,147
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testBulkPeriodicLoad,Magic Number,The method contains a magic number: 2,64
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testBulkPeriodicLoad,Magic Number,The method contains a magic number: 2,64
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testBulkPeriodicLoad,Magic Number,The method contains a magic number: 2,64
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testManualIncrementingManualCustomId,Magic Number,The method contains a magic number: 2L,133
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,manualIncrementingInternal,Magic Number,The method contains a magic number: 2,138
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,manualIncrementingInternal,Magic Number,The method contains a magic number: 2,138
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,manualIncrementingInternal,Magic Number,The method contains a magic number: 3,138
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,manualIncrementingInternal,Magic Number,The method contains a magic number: 2,138
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,manualIncrementingInternal,Magic Number,The method contains a magic number: 2,138
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,manualIncrementingInternal,Magic Number,The method contains a magic number: 3,138
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrement,Magic Number,The method contains a magic number: 32.4f,164
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrement,Magic Number,The method contains a magic number: 33.4f,164
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrement,Magic Number,The method contains a magic number: 35.4f,164
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrement,Magic Number,The method contains a magic number: 2,164
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrement,Magic Number,The method contains a magic number: 2,164
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrement,Magic Number,The method contains a magic number: 3,164
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampCustomOffset,Magic Number,The method contains a magic number: 15L,200
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 20L,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 2,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 10L,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 10L,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 10L,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 2,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 11L,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 3,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 12L,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 4,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 2,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 3,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,timestampInternal,Magic Number,The method contains a magic number: 4,205
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Long Statement,The length of the statement "db.insert(SINGLE_TABLE_NAME`"modified"`DateTimeUtils.formatTimestamp(new Timestamp(13L)`UTC_TIME_ZONE)`"created"`DateTimeUtils.formatTimestamp(new Timestamp(10L)`UTC_TIME_ZONE)`"id"`2);" is 185.,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 10L,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 13L,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 10L,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 2,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 11L,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 3,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 12L,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 4,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 3,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 2,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 3,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestamp,Magic Number,The method contains a magic number: 4,248
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 10L,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 4L,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 2,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 3,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 500L,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 4,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 501L,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 5,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 2,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 2,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 3,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 500,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 2,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 4,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampWithDelay,Magic Number,The method contains a magic number: 5,282
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementing,Magic Number,The method contains a magic number: 10L,321
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementing,Magic Number,The method contains a magic number: 10L,321
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementing,Magic Number,The method contains a magic number: 3,321
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementing,Magic Number,The method contains a magic number: 11L,321
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementing,Magic Number,The method contains a magic number: 2,321
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementing,Magic Number,The method contains a magic number: 3,321
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampInNonUtcTimezone,Magic Number,The method contains a magic number: 10L,351
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampInInvalidTimezone,Long Statement,The length of the statement "assertThatThrownBy(() -> startTask("modified"`"id"`null`0L`invalidTimeZoneID`null`null)).isInstanceOf(ConnectException.class).hasCauseInstanceOf(ConfigException.class).hasRootCauseMessage("Invalid value Europe/Invalid for configuration db.timezone: Invalid time zone identifier");" is 280.,372
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestampAndIncrementing,Long Statement,The length of the statement "db.insert(SINGLE_TABLE_NAME`"modified"`DateTimeUtils.formatTimestamp(new Timestamp(11L)`UTC_TIME_ZONE)`"created"`DateTimeUtils.formatTimestamp(new Timestamp(10L)`UTC_TIME_ZONE)`"id"`1);" is 185.,388
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestampAndIncrementing,Magic Number,The method contains a magic number: 10L,388
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestampAndIncrementing,Magic Number,The method contains a magic number: 10L,388
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestampAndIncrementing,Magic Number,The method contains a magic number: 3,388
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestampAndIncrementing,Magic Number,The method contains a magic number: 11L,388
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestampAndIncrementing,Magic Number,The method contains a magic number: 10L,388
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestampAndIncrementing,Magic Number,The method contains a magic number: 2,388
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testMultiColumnTimestampAndIncrementing,Magic Number,The method contains a magic number: 3,388
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testManualIncrementingRestoreOffset,Magic Number,The method contains a magic number: 2,447
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testManualIncrementingRestoreOffset,Magic Number,The method contains a magic number: 3,447
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testManualIncrementingRestoreOffset,Magic Number,The method contains a magic number: 2,447
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testManualIncrementingRestoreOffset,Magic Number,The method contains a magic number: 2,447
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testManualIncrementingRestoreOffset,Magic Number,The method contains a magic number: 3,447
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrementRestoreOffset,Magic Number,The method contains a magic number: 32.4f,494
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrementRestoreOffset,Magic Number,The method contains a magic number: 33.4f,494
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrementRestoreOffset,Magic Number,The method contains a magic number: 35.4f,494
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrementRestoreOffset,Magic Number,The method contains a magic number: 2,494
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrementRestoreOffset,Magic Number,The method contains a magic number: 2L,494
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testAutoincrementRestoreOffset,Magic Number,The method contains a magic number: 3L,494
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreNoVersionOffset,Magic Number,The method contains a magic number: 10L,519
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreVersionOneOffset,Magic Number,The method contains a magic number: 10L,525
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffsetsWithMultipleProtocol,Magic Number,The method contains a magic number: 8L,533
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffsetsWithMultipleProtocol,Magic Number,The method contains a magic number: 10L,533
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffset,Magic Number,The method contains a magic number: 10L,547
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffset,Magic Number,The method contains a magic number: 2,547
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffset,Magic Number,The method contains a magic number: 11L,547
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffset,Magic Number,The method contains a magic number: 3,547
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffset,Magic Number,The method contains a magic number: 12L,547
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffset,Magic Number,The method contains a magic number: 4,547
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffset,Magic Number,The method contains a magic number: 2,547
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffset,Magic Number,The method contains a magic number: 3,547
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampRestoreOffset,Magic Number,The method contains a magic number: 4,547
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreNoVersionOffset,Magic Number,The method contains a magic number: 10L,578
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreNoVersionOffset,Magic Number,The method contains a magic number: 3L,578
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreVersionOneOffset,Magic Number,The method contains a magic number: 10L,586
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreVersionOneOffset,Magic Number,The method contains a magic number: 3L,586
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffsetsWithMultipleProtocol,Magic Number,The method contains a magic number: 10L,594
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffsetsWithMultipleProtocol,Magic Number,The method contains a magic number: 2L,594
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffsetsWithMultipleProtocol,Magic Number,The method contains a magic number: 10L,594
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffsetsWithMultipleProtocol,Magic Number,The method contains a magic number: 3L,594
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 9L,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 2,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 10L,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 3,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 11L,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 4,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 12L,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 5,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 13L,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 3,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 4,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testTimestampAndIncrementingRestoreOffset,Magic Number,The method contains a magic number: 5,605
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Long Statement,The length of the statement "startTask(null`null`"SELECT \"test\".\"id\"` \"test\"" + ".\"user_id\"` \"users\".\"name\" FROM \"test\" JOIN \"users\" " + "ON (\"test\".\"user_id\" = \"users\".\"user_id\")");" is 177.,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Magic Number,The method contains a magic number: 2,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Magic Number,The method contains a magic number: 2,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Magic Number,The method contains a magic number: 3,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Magic Number,The method contains a magic number: 2,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Magic Number,The method contains a magic number: 4,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Magic Number,The method contains a magic number: 2,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Magic Number,The method contains a magic number: 4,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Magic Number,The method contains a magic number: 2,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Magic Number,The method contains a magic number: 2,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryBulk,Magic Number,The method contains a magic number: 2,642
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Long Statement,The length of the statement "db.insert(SINGLE_TABLE_NAME`"modified"`DateTimeUtils.formatTimestamp(new Timestamp(10L)`UTC_TIME_ZONE)`"id"`1`"user_id"`1);" is 123.,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Long Statement,The length of the statement "startTask("modified"`null`"SELECT \"test\".\"modified\"` \"test\".\"id\"` \"test\"" + ".\"user_id\"` \"users\".\"name\" FROM \"test\" JOIN \"users\" " + "ON (\"test\".\"user_id\" = \"users\".\"user_id\")");" is 206.,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Long Statement,The length of the statement "db.insert(SINGLE_TABLE_NAME`"modified"`DateTimeUtils.formatTimestamp(new Timestamp(10L)`UTC_TIME_ZONE)`"id"`2`"user_id"`1);" is 123.,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Long Statement,The length of the statement "db.insert(SINGLE_TABLE_NAME`"modified"`DateTimeUtils.formatTimestamp(new Timestamp(11L)`UTC_TIME_ZONE)`"id"`3`"user_id"`2);" is 123.,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Long Statement,The length of the statement "db.insert(SINGLE_TABLE_NAME`"modified"`DateTimeUtils.formatTimestamp(new Timestamp(12L)`UTC_TIME_ZONE)`"id"`4`"user_id"`2);" is 123.,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 2,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 10L,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 10L,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 2,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 11L,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 3,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 2,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 12L,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 4,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 2,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 2,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 3,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,testCustomQueryWithTimestamp,Magic Number,The method contains a magic number: 4,680
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,startTask,Long Parameter List,The method has 7 parameters. ,724
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,startTask,Long Statement,The length of the statement "final Map<String`String> taskConfig=taskConfig(timestampColumn`incrementingColumn`query`delay`timeZone`incrementingInitial`timestampInitialMs`mode);" is 148.,724
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,taskConfig,Long Parameter List,The method has 8 parameters. ,750
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,verifyMultiTimestampFirstPoll,Magic Number,The method contains a magic number: 10L,791
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,verifyTimestampFirstPoll,Magic Number,The method contains a magic number: 10L,801
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,verifyPoll,Long Parameter List,The method has 7 parameters. ,821
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,verifyPoll,Magic Number,The method contains a magic number: 10,821
+jdbc,io.aiven.connect.jdbc.source,JdbcSourceTaskUpdateTest,countInts,Missing default,The following switch statement is missing a default case: !org.eclipse.jdt.core.dom.SwitchStatement@712c9bcf,863
+jdbc,io.aiven.connect.jdbc.source,TableMonitorThreadTest,testReconfigOnUpdate,Long Statement,The length of the statement "await().atMost(Duration.ofMillis(1000)).pollInterval(Duration.ofMillis(100)).until(() -> !Mockito.mockingDetails(dialect).getInvocations().isEmpty());" is 150.,146
+jdbc,io.aiven.connect.jdbc.source,TableMonitorThreadTest,testReconfigOnUpdate,Magic Number,The method contains a magic number: 1000,146
+jdbc,io.aiven.connect.jdbc.source,TableMonitorThreadTest,testReconfigOnUpdate,Magic Number,The method contains a magic number: 100,146
+jdbc,io.aiven.connect.jdbc.source,TableMonitorThreadTest,testReconfigOnUpdate,Magic Number,The method contains a magic number: 2,146
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby,EmbeddedDerby,Empty catch clause,The method has an empty catch block.,54
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby,createTable,Magic Number,The method contains a magic number: 2,103
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby,createTable,Magic Number,The method contains a magic number: 2,103
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby,close,Magic Number,The method contains a magic number: 45000,148
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby,insert,Magic Number,The method contains a magic number: 2,185
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby,insert,Magic Number,The method contains a magic number: 2,185
+jdbc,io.aiven.connect.jdbc.source,EmbeddedDerby,insert,Magic Number,The method contains a magic number: 2,185
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingOffsetTest,setUp,Magic Number,The method contains a magic number: 1000,37
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingOffsetTest,setUp,Magic Number,The method contains a magic number: 1000000,37
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingOffsetTest,setUp,Magic Number,The method contains a magic number: 123456,37
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingOffsetTest,testToMap,Magic Number,The method contains a magic number: 2,52
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingOffsetTest,testToMap,Magic Number,The method contains a magic number: 3,52
+jdbc,io.aiven.connect.jdbc.source,TimestampIncrementingOffsetTest,testToMap,Magic Number,The method contains a magic number: 2,52
+jdbc,io.aiven.connect.jdbc.source,NumericMappingConfigTest,mapping,Long Statement,The length of the statement "return Arrays.stream(new Object[][]{{NumericMapping.NONE`false`null}`{NumericMapping.NONE`false`"none"}`{NumericMapping.NONE`false`"NONE"}`{NumericMapping.PRECISION_ONLY`false`"precision_only"}`{NumericMapping.PRECISION_ONLY`false`"PRECISION_ONLY"}`{NumericMapping.BEST_FIT`false`"best_fit"}`{NumericMapping.BEST_FIT`false`"BEST_FIT"}`{NumericMapping.PRECISION_ONLY`true`null}`{NumericMapping.NONE`true`"none"}`{NumericMapping.NONE`true`"NONE"}`{NumericMapping.PRECISION_ONLY`true`"precision_only"}`{NumericMapping.PRECISION_ONLY`true`"PRECISION_ONLY"}`{NumericMapping.BEST_FIT`true`"best_fit"}`{NumericMapping.BEST_FIT`true`"BEST_FIT"}});" is 639.,35
